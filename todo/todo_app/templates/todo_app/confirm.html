@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            background-color: floralwhite;
+        }
+        input{
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        }
+        input::placeholder{
+            color: cornflowerblue;
+        }
+        .submit{
+            background-color: turquoise;
+        }
+        .center-coloumn{
+            width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: aliceblue;
+            border-radius: 3px;
+            box-shadow: 6px 2px 30px 0px rgba(0, 0, 0,0.75);
+        }
+    
+        .btn-danger{
+            color: white;
+            background-color:crimson;
+            border-color: crimson;
+            bottom: auto;
+        }
+        .btn-info{
+            color: white;
+            background-color:royalblue;
+            border-color: royalblue;
+            bottom: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-coloumn">
+<p>Are you sure you want to delete {{task}}?</p>
+<a class="btn-danger"href="{% url 'todo' %}">Cancel</a>
+<form method="POST" action="">
+    {% csrf_token %}
+
+    <input class="btn-info"type="submit" name="Delete">
+</form>
+</div>
+</body>
+</html>
